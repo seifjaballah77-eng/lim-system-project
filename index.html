@@ -27,6 +27,21 @@
 @media(prefers-reduced-motion:reduce){.start-glow,.home-mark{animation:none}}
 
 
+
+/* Neon expansion UI */
+#nitroBtn{display:none;position:fixed;right:18px;bottom:85px;z-index:4;pointer-events:auto;border:2px solid #ffe79a;border-radius:50%;width:76px;height:76px;background:radial-gradient(circle,#ffdc57,#ff7b18);color:#351600;font-weight:900;font:inherit;box-shadow:0 0 18px #ff9b2d99;touch-action:manipulation}
+#nitroBtn:active{transform:scale(.92)}
+#neonPass{margin:12px auto 0;max-width:440px;padding:10px 12px;border:1px solid #ffd16666;border-radius:12px;background:#201a2ddd;text-align:right;font-size:12px}
+#passTrack{height:8px;background:#0b1225;border-radius:8px;overflow:hidden;margin:7px 0}
+#passFill{height:100%;width:0;background:linear-gradient(90deg,#65f6ff,#ffd166);transition:width .25s}
+#creativeNetwork{position:absolute;top:12px;right:12px;z-index:8;background:linear-gradient(110deg,#6c35d9,#087fa7);border-color:#b9a1ff}
+#nameTools{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+#nameTools .btn{flex:1;font-size:12px;padding:8px}
+#emojiModal{z-index:30;background:#020611ef}
+.emoji-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin:12px 0}
+.emoji-grid button{font-size:22px;padding:8px 0;background:#0a2038;border:1px solid #65f6ff55;border-radius:10px;color:white}
+#arenaEvent{position:fixed;top:58px;left:50%;transform:translateX(-50%);z-index:4;padding:7px 13px;border:1px solid #ffd16699;border-radius:999px;background:#160f25e8;color:#ffe9a5;font-weight:800;pointer-events:none;white-space:nowrap}
+
 /* NEON SQUAD LOBBY */
 #lobbyScreen{background:radial-gradient(ellipse at 50% 35%,#102d4b 0%,#060d1e 58%,#02050d 100%);z-index:6;align-items:stretch}
 .lobby-shell{width:min(1100px,100%);margin:auto;display:grid;grid-template-columns:150px minmax(0,1fr) 235px;gap:14px;direction:ltr;text-align:right}
