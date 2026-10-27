@@ -14,7 +14,7 @@ jobs:
           import re
           from pathlib import Path
           html = Path("index.html").read_text(encoding="utf-8")
-          scripts = re.findall(r"<script(?:\\s[^>]*)?>([\\s\\S]*?)</script>", html, re.I)
+          scripts = re.findall(r'<script[^>]*>(.*?)</script>', html, re.I | re.S)
           inline = [s.strip() for s in scripts if s.strip()]
           assert inline, "No inline game script found"
           Path("/tmp/game.js").write_text(inline[-1], encoding="utf-8")
@@ -28,7 +28,7 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           html = Path("index.html").read_text(encoding="utf-8")
-          required = ["function start()", "function pause()", "function finish(win)", "function move(dt,t)", "function world(dt,t)", "data-key=\"KeyW\"", "localStorage.setItem"]
+          required = ["function start()", "function pause()", "function finish(win)", "function move(dt,t)", "function world(dt,t)", 'data-key="KeyW"', "localStorage.setItem"]
           missing = [item for item in required if item not in html]
           if missing:
               raise SystemExit("Missing game features: " + ", ".join(missing))
