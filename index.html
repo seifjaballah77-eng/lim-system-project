@@ -108,9 +108,11 @@
             const current = this.nodes[i];
             const dx = current.x - previous.x;
             const dy = current.y - previous.y;
-            const distance = Math.hypot(dx, dy) || 1;
-            current.x = previous.x + (dx / distance) * current.length;
-            current.y = previous.y + (dy / distance) * current.length;
+            const distance = Math.hypot(dx, dy);
+            const directionX = distance > 0.001 ? dx / distance : -1;
+            const directionY = distance > 0.001 ? dy / distance : 0;
+            current.x = previous.x + directionX * current.length;
+            current.y = previous.y + directionY * current.length;
           }
         }
 
